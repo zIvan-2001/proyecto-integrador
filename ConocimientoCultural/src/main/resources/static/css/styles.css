@@ -1,0 +1,956 @@
+:root{
+    --red:#000000;
+    --black:#252a34;
+    --blue:#08d9d6;
+   
+    --title:35px;
+    --text:19px;
+ }
+ 
+ *{
+     margin:0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ body{
+     
+     overflow-x: hidden;
+     font-family: 'Red Hat Text', sans-serif;
+     
+ }
+ #registro{
+     background-image: url(provincias/Morropon/cerro-pilan.jpg);
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+ }
+ .go-top{
+     position: fixed;
+     bottom: 100px;
+     right: -100%;
+     width: 50px;
+     height: 50px;
+     border:2px solid #e02f58;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     z-index: 1000;
+     transition: 0.5s;
+     border-radius: 15px;
+ }
+ .go-top:hover{
+     background: #e02f58;
+     color:#fff;
+     border: 2px solid var(--white);
+ }
+ .go-top:hover span{color:var(--white);}
+ 
+ .go-top > span{
+    font-size: 30px;
+    color: var(--black);
+ }
+ 
+ 
+ /** Skew **/
+ .skew-abajo{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     
+ }
+ .skew-arriba{
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-width: 10vh 100vw 0 0;
+ 
+     z-index: 10;
+ }
+ 
+ /** Navegation Menu **/
+ #header{
+     position: relative;
+     width: 100%;
+ }
+ 
+ #mapa{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 100px;
+     
+ 
+ }
+ .menu{
+     position: fixed;
+     top:0;
+     left: 0;
+     width: 100%;
+     height: 60px;
+     background:#DF7272;
+ 
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 9999;
+ }
+ .menu .logo-box{
+     margin-left: 20px;
+     position: relative;
+     top: -19px;}
+ .menu .logo-box h1 a{
+     text-decoration: none;
+     font-size: #Fff;
+     font-weight: 400;
+     color:#fff;
+ }
+ .menu .list-container{margin-right: 20px;}
+ .menu .list-container ul{display: flex;}
+ .menu .list-container ul li{list-style: none;}
+ .menu .list-container ul li a{
+     text-decoration: none;
+     
+     padding:19px;
+     color: var(--black);
+     
+     transition: 0.3s;
+     font-size: 16px;
+ }
+ .menu .list-container ul li a.active{
+     background: #f39ab2;
+     color:#34252b;
+ }
+ .menu .list-container ul li a:hover{
+     background: var(--black);
+     color:#fff;
+ }
+ 
+ .btn-menu > .fa-bars{
+     display: none;
+ }
+ 
+ @media only screen and (max-width:900px){
+     .btn-menu > .fa-bars{
+         display: block;
+         position:absolute;
+         right: 30px;
+         top: 20px;
+         font-size: 28px;
+         color: black;
+         transition: 0.5s;
+         cursor: pointer;
+     }
+     .btn-menu > .fa-times{color: var(--black);}
+     .btn-menu > .fa-bars:hover{color:var(--black);}
+     .menu .logo-box{margin-left: 30px;}
+     .menu .list-container{
+         position: fixed;
+         top:60px;
+         left:-100%;
+         background:#fff;
+         width: 100%;
+         height: calc(100vh - 60px);
+     }
+     .menu .list-container .lists{
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         border-top:4px solid var(--black);
+     }
+     .menu .list-container ul li{
+         width: 90%;
+         border-bottom: 2px solid var(--black);
+         display: flex;
+         justify-content: center;
+     }
+     .menu .list-container ul li a{
+         font-size: 20px;
+         text-align: center;
+         padding:12px 0px;
+     }
+     .menu .list-container ul li a.active{
+         background: none;
+         color:var(--black);
+     }
+     .menu .list-container ul li a:hover{
+         background: none;
+         color:var(--black);
+     }
+ }
+ 
+ /** Navegation Menu **/
+ 
+ /** IMG Header **/
+ .img-ayabaca{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://upload.wikimedia.org/wikipedia/commons/0/0c/Church_Nuestra_Se%C3%B1ora_del_Pilar_Ayabaca.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+ }
+ .img-huancabamba{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://static-b.walac.pe/wp-content/uploads/2017/09/hbba.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+  .img-morropon{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://www.infoturperu.com.pe/media/k2/items/cache/855e2c5ce3022dc94b2a6dd974e0bacf_XL.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+
+    .img-paita{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://todosobrepaita.files.wordpress.com/2013/05/paita_1.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+    .img-piura{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://www.netravel.pe/wp-content/uploads/2018/10/Catedral-de-piura.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+    .img-sechura{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://static-b.walac.pe/wp-content/uploads/2017/09/hbba.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+   .img-sullana{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://www.tepsa.com.pe/wp-content/uploads/2020/06/Sullana.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+    .img-talara{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     background:url(https://upload.wikimedia.org/wikipedia/commons/c/ce/M%C3%A1ncora_Beach.jpg);
+     background-color: #1b44430a;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     top:60px;
+ }
+ 
+ .img-ayabaca .welcome,.img-huancabamba .welcome,
+ .img-morropon .welcome,.img-paita .welcome,
+ .img-piura .welcome,.img-sechura .welcome,
+ .img-sullana .welcome, .img-talara .welcome{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     
+ 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ .img-header .welcome h1{
+     font-size: 50px;
+     color:#fff;
+     font-weight: 200;
+ }
+ .img-header .welcome hr{
+     width: 400px;
+     height: 2px;
+     background: #fff;
+     border: none;
+     margin-top: 5px;
+ }
+ .img-header .welcome p{
+     font-size: 20px;
+     color: #fff;
+     margin-top: 20px;
+ }
+ .img-header .welcome > button{
+     width: 170px;
+     height: 40px;
+     background: var(--black);
+     border-radius: 24px;
+     border:none;
+     outline: none;
+     font-size: 22px;
+     color: #fff;
+     text-align: center;
+     margin-top: 20px;
+     cursor: pointer;
+     transition: 0.5s;
+ }
+ .img-header .welcome > button:hover{
+     background:var(--blue);
+ }
+ 
+ @media only screen and (max-width:773px ){
+     .img-header .welcome h1{font-size: 40px;}
+     .img-header .welcome > button{width: 130px; font-size: 20px;}
+ }
+ @media only screen and (max-width:590px){
+     .img-header .welcome h1{font-size: 30px;}
+     .img-header .welcome hr{width: 100px;}
+     .img-header .welcome p{font-size: 17px;}
+     .img-header .welcome > button{width: 100px; font-size: 17px;}
+ }
+ 
+ /** Acerca de Nosotros **/
+ .acerca-de{
+     width: 100%;
+     margin-top: 120px;
+     margin-bottom: 150px;
+ }
+ .acerca-de .info-container{
+     width: 80%;
+     margin:auto;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+ }
+ .acerca-de .info-container h1{
+     font-size: 50px;
+     font-weight: 400;
+     color: var(--black);
+     text-align: center;
+     margin-bottom: 20px;
+ }
+ .acerca-de .info-container p{
+     text-align: center;
+     font-size: 17px;
+     color: var(--black);
+     line-height: 35px;
+     margin:10px 0px;
+ }
+ .acerca-de .info-container .about-gallery{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     margin: 100px 0px;
+ }
+ .acerca-de .info-container .about-gallery img{
+     
+     height: 300px;
+     margin: 10px 10px;
+     object-fit: cover;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ .acerca-de .info-container .about-more{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+ .acerca-de .info-container .about-more button{
+     width: 120px;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     font-size: 20px;
+     background: var(--black);
+     border: none;
+     outline: none;
+     border-radius: 20px;
+     color: #fff;
+     cursor: pointer;
+     transition: 0.5s;
+ }
+ .acerca-de .info-container .about-more button:hover{background: var(--blue);}
+ 
+ @media only screen and (max-width:773px){
+     .acerca-de .info-container .about-gallery{flex-direction: column;}
+     .acerca-de .info-container .about-gallery img{width: 100%;}
+ }
+ @media only screen and (max-width:590px){
+     .acerca-de .info-container h1{font-size: 30px;}
+     .acerca-de .info-container p{font-size: 15px;}
+ }
+ 
+ /** Nuestros proyectos **/
+ .our-projects{
+     position: relative;
+     width: 100%;
+     height: 100%; 
+     background-color: beige;
+     background-attachment:fixed;
+     background-position: center;
+     background-size: cover;
+     margin-top: 100px;
+ }
+ .our-projects .deg-background{
+     position:absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background:rgba(0,0,0,0.8);
+ }
+ .our-projects .ejeZproject{
+     position: relative;
+     width: 100%;
+     height: 100%;
+ }
+ .our-projects .container-project{
+     width: 90%;
+     margin:auto;
+     padding-top: 100px;
+ }
+ .our-projects .container-project .project-title{
+     border:2px solid #fff;
+     padding:10px;
+     text-align: center;
+     width: 50%;
+     margin: auto;
+ }
+ .our-projects .container-project .project-title h2{
+     font-size: 40px;
+     color: #fff;
+     font-weight: normal;
+ }
+ .our-projects .container-project .project-title hr{
+    background:#fff;
+    width: 50%;
+    height: 3px;
+    margin: 10px auto;
+ }
+ .our-projects .container-project .project-img{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin-top: 80px;
+     padding-bottom: 100px;
+ }
+ .our-projects .container-project .project-img img{
+   width: calc(30% - 10px);
+   margin:10px;
+   object-fit: cover;
+   border-radius: 10px;
+   cursor: pointer;
+ }
+ @media only screen and (max-width:773px){
+     .our-projects .container-project .project-img img{width: 80%; margin-bottom: 30px;}
+ }
+ @media only screen and (max-width:446px){
+     .our-projects .container-project .project-title h2{font-size: 30px;}
+ }
+ 
+ /** Testimonios **/
+ .testimonios{
+     width: 100%;
+     margin-top: 120px;
+ }
+ .testimonios .testimonios-title{
+     width: 50%;
+     margin:auto;
+     text-align: center;
+ }
+ .testimonios .testimonios-title h2{
+     font-size: 50px;
+     font-weight: normal;
+     color: var(--black);
+     margin-bottom: 10px;
+ }
+ .testimonios .testimonios-title hr{
+     width: 60%;
+     height: 2px;
+     margin:auto;
+     background: var(--black);
+ }
+ .testimonios .box-testimonio{
+     width: 90%;
+     margin: 80px auto;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+ .testimonios .box-testimonio .card-testimonio{
+     width: 45%;
+     margin: 20px;
+ }
+ .testimonios .box-testimonio .card-testimonio .card-img{
+     display: flex;
+     justify-content: center;
+     margin-bottom: 30px;
+ }
+ .testimonios .box-testimonio .card-testimonio .card-img img{
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     object-fit: cover;
+     cursor: pointer;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text{
+     border: 2px solid var(--black);
+     padding:20px;
+     border-radius: 20px;
+     transition: 0.1s;
+     cursor: pointer;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text h4{
+     font-size: 30px;
+     font-weight: 400;
+     color: var(--black);
+     text-align: center;
+     margin-bottom: 10px;
+     transition: 0.1s;
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text p{
+     font-size: 20px;
+     text-align: center;
+     line-height: 40px;
+     color: var(--black);
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text:hover{
+     border: 2px solid var(--blue);
+ }
+ .testimonios .box-testimonio .card-testimonio .testimonio-text:hover h4{
+     color: var(--blue);
+ }
+ 
+ @media only screen and (max-width:890px){
+     .testimonios .box-testimonio .card-testimonio .card-img img{width: 200px; height: 200px;}
+     .testimonios .box-testimonio .card-testimonio{width: 100%;}
+     .testimonios .box-testimonio .card-testimonio .testimonio-text h4{font-size: 25px;}
+     .testimonios .box-testimonio .card-testimonio .testimonio-text p{font-size: 17px; line-height: 35px;}
+ }
+ 
+ /** Footer **/
+ .footer{
+     position: relative;
+     width: 100%;
+     height: 100%;
+     
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+ }
+ .footer .deg-footer{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: url(img/#);
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     background:url(../img/header.jpg);
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+ }
+ .footer .ejeZfooter{
+     position: relative;
+     width: 100%;
+     height: 100%;
+ }
+ .footer .footer-content{
+     padding-top: 100px;
+     width: 90%;
+     margin: auto;
+     padding-bottom: 100px;
+ }
+ .footer .footer-content .footer-title{
+     width: 50%;
+     margin: auto;
+     border:2px solid #fff;
+     padding:15px;
+ }
+ .footer .footer-content .footer-title h2{
+     font-size: 35px;
+     font-weight: 400;
+     color: #fff;
+     text-align: center;
+     margin-bottom: 5px;
+ }
+ .footer .footer-content .footer-title hr{
+     background: #fff;
+     height: 2px;
+     width: 80%;
+     margin:auto;
+ }
+ .footer .formulario-content{
+     width: 60%;
+     margin: 50px auto;
+     background: #fff;
+     padding:30px;
+     border-radius: 50px;
+     border: 1.5px solid var(--black);
+ }
+ .footer .formulario-content #formulario{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+ }
+ .footer .formulario-content #formulario label{
+     font-size: 20px;
+     text-align: center;
+     color: var(--black);
+     margin: 30px 0px 10px 0px;
+ }
+ .footer .formulario-content #formulario input{
+     width: 90%;
+     height: 40px;
+     margin:auto;
+     border-radius: 24px;
+     outline: none;
+     border:1.5px solid var(--black);
+     text-align: center;
+     font-size: 18px;
+     color: var(--black);
+ }
+ .footer .formulario-content #formulario textarea{
+     width: 90%;
+     height: 200px;
+     margin:auto;
+     padding: 20px;
+     border-radius: 24px;
+     outline: none;
+     border:1.5px solid var(--black);
+     font-size: 15px;
+     color: var(--black);
+ }
+ .footer .formulario-content #formulario .send{
+     margin: 30px;
+     display: flex;
+     justify-content: center;
+ }
+ .footer .formulario-content #formulario button{
+     width: 120px;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     font-size: 20px;
+     background: var(--black);
+     border: none;
+     outline: none;
+     border-radius: 20px;
+     color: #fff;
+     cursor: pointer;
+     transition: 0.5s;
+ }
+ .footer .formulario-content #formulario button:hover{
+     background: var(--blue);
+ }
+ .footer .formulario-content #formulario .mensaje-form{
+     width: 100%;
+     margin:auto;
+     padding:20px;
+ }
+ .footer .formulario-content #formulario .mensaje-form p{
+     font-size:19px;
+     color: var(--black);
+     line-height: 35px;
+ }
+ .footer .footer-text{
+     position:absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 70px;
+     background:#e02f58b5;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   
+ }
+ .footer .footer-text p{
+     font-size: 20px;
+     text-align: center;
+     color: #fff;
+ }
+ 
+ @media only screen and (max-width:900px){
+     .footer .formulario-content{width: 85%; padding:20px;}
+     .footer .formulario-content #formulario input{width: 100%;}
+     .footer .formulario-content #formulario textarea{width: 100%;}
+ }
+ @media only screen and (max-width:590px){
+     .footer .formulario-content{width: 95%; padding:20px;}
+     .footer .formulario-content #formulario label{font-size: 17px;}
+     .footer .formulario-content #formulario input{width: 100%; font-size: 17px;}
+     .footer .formulario-content #formulario textarea{width: 100%;}
+     .footer .formulario-content #formulario .mensaje-form p{font-size: 17px;}
+     .footer .footer-text{width: 100%; padding: 0px 30px;}
+     .footer .footer-text p{font-size: 17px;}
+ }
+ /*login */
+ 
+ .contenedor{
+     height: 550px;
+     width: 450px;
+     position: absolute;
+     top: 10;
+     bottom: 0;
+     right: 0;
+     left: 0;
+     margin: auto;
+     background:#ffffffa3;
+     padding: 40px;
+     bottom: 300px;
+ }
+ 
+ .contenedor h1{
+     color: #000000 ;
+ }
+ 
+ h1{
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: center;
+     color: #5B5B5B;
+     margin: 0px;
+     font-size: 30px;
+     margin-bottom: 30px;
+ }
+ hr { 
+     clear: both; color: red; background-color: red; height: 1px; border-width: 0; 
+ } 
+ #destinos{
+     font-size: 40px;
+     position: relative;font-family: 'Leckerli One', cursive;
+ }
+ #reg{
+     font-size: 35px;
+ }
+ #destinos-p{
+     text-align: center;
+     color: #5B5B5B;
+    
+     font-size: 20px;
+     position: relative;font-family: 'Leckerli One', cursive;
+ }
+ #logo{
+     font-size: 30px;
+     font-family: Arial, Helvetica, sans-serif;
+     position: relative;font-family: 'Leckerli One', cursive;  
+ }
+ #imagenes{
+     font-size: 30px;
+     position: relative;font-family: 'Leckerli One', cursive; 
+     padding-bottom: 10px;
+     padding-top: 15px;
+ }
+ 
+ input[type="text"],
+ input[type="password"]{
+     display: block;
+     padding: 10px;
+     width: 100%;
+     margin: 5px 0px;
+     background: #f5dcdc;
+     border: none;
+     border-radius: 5px;
+     outline: none;
+ }
+ 
+ input[type="submit"]{
+     background: #DF7272;
+     border: none;
+     width: 100%;
+     height: 40px;
+     color: white;
+     border-radius: 5px;
+     font-size: 20px;
+     margin-top: 15px;
+     display: block;
+ 
+ }
+ 
+ .registro{
+     border-bottom: none;
+     margin-top: 12px;
+     font-size: 15px;
+     
+ }
+ 
+ .login p a{
+     text-decoration: none;
+     color:#DF7272 ;
+ }
+  
+   .modos{
+     display: flex;
+   justify-content: center;
+
+   border-radius: 20px;
+       margin-bottom: 50px;
+    margin-top: 10px;
+   background-color: #4e4e4e1a;
+   }
+   .container{
+   padding-right: 0px;
+ padding-left: 0px; width: 100%;
+   }
+ 
+   .boton_cerrar_sesion{
+   text-decoration: none;
+     padding: 3px;
+     padding-left: 10px;
+     padding-right: 10px;
+     font-weight: 300;
+     font-size: 15px;
+     color: #fefffe;
+     background-color: #a20e3391;
+     border: 2px solid #dc354500;
+     padding-top: 0px;
+     position: relative;
+     top: -2px;
+     border-radius: 10px;
+     height: 28px;}
+     
+     .boton_cerrar_sesion:hover{
+     opacity: 0.6;
+     text-decoration: none;
+   }
+   .piura{
+     padding-bottom: 100px;
+     margin-top: 50px;
+     margin-left: 30px;
+     margin-right: 30px;
+ }
+ 
+ .ayabaca {
+   background: url(https://upload.wikimedia.org/wikipedia/commons/0/0c/Church_Nuestra_Se%C3%B1ora_del_Pilar_Ayabaca.jpg) 0 0 no-repeat;
+   min-height: 301px;
+   margin-bottom: 30px;
+ }
+ .huancabamba {
+    background: url(https://static-b.walac.pe/wp-content/uploads/2017/09/hbba.jpg) 0 0 no-repeat;
+    min-height: 301px;
+  }
+ .morropon {
+   background: url(https://static-b.walac.pe/wp-content/uploads/2018/01/quebrada-del-chililique.jpg) 0 0 no-repeat;
+   min-height: 301px;
+ }
+ .paita {
+    background: url(https://static-b.walac.pe/wp-content/uploads/2016/02/paita.jpg) 0 0 no-repeat;
+    min-height: 301px;
+  }
+ .piura1 {
+   background: url(https://www.esan.edu.pe/conexion/actualidad/2018/08/27/1500x844_conexion_negocios_piura.jpg) 0 0 no-repeat;
+   min-height: 301px;
+ }
+ .sechura {
+    background: url(https://www.elregionalpiura.com.pe/images/Fotografias/2016/Abril_2016/Iglesia-San-Martin-Sechura.jpg) 0 0 no-repeat;
+    min-height: 301px;
+  }
+  .sullana {
+    background: url(https://www.tepsa.com.pe/wp-content/uploads/2020/06/Sullana.jpg) 0 0 no-repeat;
+    min-height: 301px;
+  }
+  .talara {
+    background: url(https://www.radiocutivalu.org/wp-content/uploads/2016/07/m%C3%A1ncora-playa.jpg) 0 0 no-repeat;
+    min-height: 301px;
+  }
+   .ayabaca,.huancabamba, .morropon,.paita,.piura1,.sechura,.sullana,.talara{
+   background-size: cover;
+   position: relative;
+   margin-bottom: 10px;
+   border-radius:15px;
+ }   
+ 
+ .ayabaca:hover .overlay-effect, .huancabamba:hover .overlay-effect, 
+ .morropon:hover .overlay-effect, .paita:hover .overlay-effect,
+ .piura1:hover .overlay-effect , .sechura:hover .overlay-effect,
+  .sullana:hover .overlay-effect, .talara:hover .overlay-effect{
+   opacity: 1;
+   cursor: pointer;
+ }
+ 
+ .overlay-effect {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity: 0;
+   transition: .5s ease;
+   border-radius:15px;
+   background-color: #4847478f;
+   overflow:hidden;
+ }
+ 
+ .ayabaca a,
+ .huancabamba a,
+ .morropon a,
+ .paita a,
+ .piura1 a,
+ .sechura a,
+ .sullana a,
+ .talara a{
+   color: #fff;
+   font-size: 30px;
+ }
+ 
+ .ayabaca h3,
+ .huancabamba h3,
+ .morropon h3,
+ .paita h3,
+ .piura1 h3,
+ .sechura h3,
+ .sullana h3,
+ .talara h3{
+   padding: 15px 30px;
+ }
+ 
+ @media screen and (max-width: 768px) {
+   .ayabaca, .huancabamba, .morropon ,.paita,.piura1, .sechura,.sullana,.talara {margin-bottom: 10px;}
+ }
+ .provincia{
+    top: 50%;
+    font-size:50px;
+    position: relative;
+    
+ }
+ .tamaño{
+ font-size:20px;
+ }
+ .ayabaca-principal{
+ color: #ffff;
+ font-size: 80px;
+ font-family:'Leckerli One', cursive;
+ -webkit-text-stroke: 2px black;
+ }

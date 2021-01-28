@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layouts/base-layout::head"></head>
+<body>
+  <nav class="menu" style="padding-top: 35px;">
+     <div class="logo-box">
+       
+       <span class="btn-menu"><i class="fas fa-bars"></i></span>
+         <p id="logo" >Conocimiento Cultural Peruano</p>
+     </div>
+     
+     <div class="list-container">
+        <ul class="lists" style="margin-bottom: 0px">
+          <li><a th:href="@{/}" >Inicio</a></li>
+            
+            
+        <li class="nav-item dropdown" style="position: relative;top: -19px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:href="@{/destinos}">
+          Destinos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" th:href="@{/destinos/ayabaca}">Ayabaca</a>
+          <a class="dropdown-item" href="#">Huancabamba</a>
+          <a class="dropdown-item" href="#">Morropon</a>
+          <a class="dropdown-item" href="#">Paita</a>
+          <a class="dropdown-item" href="#">Piura</a>
+          <a class="dropdown-item" href="#">Sechura</a>
+          <a class="dropdown-item" href="#">Sullana</a>
+          <a class="dropdown-item" href="#">Talara</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li><a th:href="@{/login}" class="active">Login</a></li>
+      
+        </ul>
+         
+        
+     
+        
+     </div>
+        
+    </nav>
+</body>
+</html>

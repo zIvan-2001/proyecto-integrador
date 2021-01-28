@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+	</div>
+	<div class="container">
+	<a class="btn btn-primary btn-sm "th:href="@{/views/imagenes/create}" th:text="'Nueva Imagen'" title="Nuevo registro"></a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">nombre</th>
+					<th scope="col">descripcion</th>
+					<th scope="col">ciudad</th>
+					<th scope="col">imagen</th>
+					<th scope="col">opciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="iG:${imagenes}">
+					<th scope="row" th:text=${iG.id}>1</th>
+					<td th:text=${iG.nombres}></td>
+					<td th:text=${iG.descripcion}></td>
+					<td th:text=${iG.ciudad.ciudad}></td>
+					<td ><img class="d-block" style="width: 50px" th:src="@{${'/provincias/'+iG.foto}}" /></td>
+					
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/imagenes/edit/} + ${iG.id}"
+							th:text="'Editar'" title="Editar Registro">
+						</a>
+						
+					
+						<a class="btn btn-danger btn-sm" th:href="@{/views/imagenes/delete/} + ${iG.id}"
+							th:text="'Eliminar'" title="Eliminar Registro"
+							onclick="return confirm('Esta seguro de eliminar el registro?');">
+						</a>
+					</td>	
+				</tr>
+
+			</tbody>
+		</table>
+
+
+
+	</div>
+	<footer th:replace="plantilla/template :: footer"> </footer>
+</body>
+</html>
